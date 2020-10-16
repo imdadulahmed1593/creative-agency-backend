@@ -70,6 +70,7 @@ app.get("/orders/sync", (req, res) => {
 
 app.post("/services", (req, res) => {
   const service = req.body;
+  console.log(service);
   serviceCollection.create(service, (err, data) => {
     if (err) {
       res.status(500).send(err);

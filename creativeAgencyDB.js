@@ -4,6 +4,7 @@ const serviceSchema = mongoose.Schema({
   icon: String,
   title: String,
   description: String,
+  url: String,
 });
 
 const reviewSchema = mongoose.Schema({
