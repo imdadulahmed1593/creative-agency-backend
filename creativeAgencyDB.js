@@ -22,6 +22,7 @@ const orderSchema = mongoose.Schema({
   type: String,
   description: String,
   icon: String,
+  status: String,
 });
 
 const serviceCollection = mongoose.model("serviceCollection", serviceSchema);

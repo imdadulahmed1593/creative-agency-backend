@@ -103,6 +103,22 @@ app.post("/orders/new", (req, res) => {
   });
 });
 
+app.patch("/update/:id", function (req, res) {
+  const status = req.body.status;
+  console.log(status);
+  orderCollection.findOneAndUpdate(
+    { _id: req.params.id },
+    { status: status },
+    (err, data) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(201).send("Got a PUT request at /user");
+      }
+    }
+  );
+});
+
 //listener
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
